@@ -36,6 +36,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation'com.github.kongqw:AndroidSerialPort:1.0.1'
     //倒计时
-    implementation 'com.dyhdyh.support:count-down-timer:1.0.2'
+    api 'com.dyhdyh.support:count-down-timer:1.0.2'
+    //设备接入Link SDK
+    api ('com.aliyun.alink.linksdk:iot-linkkit:1.7.1.5')
+    api ('com.aliyun.alink.linksdk:iot-device-manager:1.7.1.6')
+    //ping
+    api files('libs\\ping.aar')
 
 }
