@@ -15,13 +15,16 @@ public class SerialPortUtils {
     private static SerialPortManager mSerialPortManager;
     private static CountDownTimerSupport mTimer;
 
+
     /**
      * 串口打开 发送数据
-     * @param bytes 传给串口的数据
+     * @param bytes  传给串口的数据
+     * @param port 串口号
+     * @param Frequency 串口频率
      * @param millisInFuture 超时时间
      * @param onSerialPortDataCallback 串口回调
      */
-    public static void sendData(byte[] bytes,long millisInFuture,final OnSerialPortDataCallback onSerialPortDataCallback){
+    public static void sendData(byte[] bytes,String port,int Frequency,long millisInFuture,final OnSerialPortDataCallback onSerialPortDataCallback){
         mSerialPortManager = new SerialPortManager();
         mTimer = new CountDownTimerSupport(millisInFuture, 1000);
         mSerialPortManager.setOnOpenSerialPortListener(new OnOpenSerialPortListener() {
@@ -57,7 +60,7 @@ public class SerialPortUtils {
                 Log.d("SerialPortUtils","正在开门...");
 
             }
-        }).openSerialPort(new File("/dev/ttyS0"), 9600);
+        }).openSerialPort(new File(port), Frequency);
         mTimer.setOnCountDownTimerListener(new OnCountDownTimerListener() {
             @Override
             public void onTick(long millisUntilFinished) {
