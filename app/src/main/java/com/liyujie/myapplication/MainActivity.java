@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.liyujie.spencapsulation.utils.InitManagerUtils;
-
 
 public class MainActivity extends AppCompatActivity{
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +13,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 //        byte[] bytes = new byte[1];
 //        SerialPortUtils.sendData(bytes,2000,this);
+
 
     }
 
